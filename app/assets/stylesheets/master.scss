@@ -1,0 +1,55 @@
+$primary-font: 'Open Sans', sans-serif;  
+$secondary-font: 'Dosis', sans-serif;  
+$main-blue: #337ab7;  
+
+$footer-height: 45px;  
+
+/* Sticky header styles
+-------------------------------------------------- */
+
+html, body {
+	height: 100%;
+	font-family: $primary-font;
+}
+
+.navbar {
+	font-family: $secondary-font;
+	background-color: white;
+}
+
+.navbar .navbar-brand {
+	font-weight: 100; 
+	font-size: 30px;
+	letter-spacing: 2px;
+	color: $main-blue;
+}
+
+/* Sticky header styles
+-------------------------------------------------- */
+
+
+
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -45px;
+  /* Pad bottom by footer height */
+  padding: 0 0 45px;
+}
+
+/* Set the fixed height of the footer here */
+.footer {
+  height: $footer-height;
+  line-height: $footer-height;
+  background: $main-blue;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
