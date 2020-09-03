@@ -7,10 +7,15 @@
 	<% @ideas.each do |idea| %>
 	  <div class="panel panel-default">
 	    <div class="panel-body">
-	      <blockquote>
-	        <p><%= idea.description %></p>
-	        <small>by <%= idea.author %></small>
-	      </blockquote> 
+		    <blockquote>
+				<p><%= idea.description %></p>
+		        <small>by <%= idea.author %></small>
+		    </blockquote> 
+		    <br>
+			<div class="btn-group" role="group">
+		        <%= link_to "Edit", edit_idea_path(idea.id), class: 'btn btn-info' %>
+		        <%= link_to "Delete", idea_path(idea.id), method: :delete, class: 'btn btn-danger', data: {confirm: "Are you sure?"} %>
+		    </div>
 	    </div>
 	  </div>
 	<% end %>
