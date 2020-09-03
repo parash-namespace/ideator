@@ -4,17 +4,18 @@ class IdeasController < ApplicationController
 
 
 	def index
-		@ideas = Idea.all
+		@ideas = Idea.paginate(page: params[:page], per_page: 2)
 	end
 
 	def create
 		@idea = Idea.create(idea_params)
 		
-		# if @idea.valid?
+		if @idea.valid?
+			flash[:success] = 'Idea created.'
+		else
+			flash[:failure] = 'Failed to create Idea.'
 			# implement later
-		# else
-			# implement later
-		# end
+		end
 		
 		redirect_to root_path
 	end
@@ -24,8 +25,10 @@ class IdeasController < ApplicationController
 
 	def update
 		if @idea.update(idea_params)
+			flash[:success] = "The idea has been updated!"
 			redirect_to root_path
 		else
+			flash[:failure] = "Woops! Looks like there has been an error!"
 			redirect_to edit_idea_path(params[:id])
 		end
 	end
@@ -33,6 +36,7 @@ class IdeasController < ApplicationController
 
 	def destroy
 		@idea.destroy
+		flash[:success] = "The idea was successfully deleted!"
 		redirect_to root_path
 	end
 

@@ -20,5 +20,9 @@
 	  </div>
 	<% end %>
 
+	<div class="float-left mt-5 p-2">
+		<%= will_paginate @ideas, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+	</div>
+
 	<%= render 'ideas/form' %>
 </div>
