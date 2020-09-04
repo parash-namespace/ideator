@@ -39,7 +39,7 @@ module Api
 				if(@idea)
 					render json: {status: 'SUCCESS', message: 'Found idea', data: @idea}, status: :ok
 				else
-					render json: {status: 'FAILED', message: 'Idea not found'}, status: :bad_request
+					render json: {status: 'FAILED', message: 'Idea not found'}, status: :not_found
 				end
 			end
 
@@ -49,7 +49,7 @@ module Api
 					@idea.destroy
 					render json: {status: 'SUCCESS', message: 'Deleted idea'}, status: :ok
 				else
-					render json: {status: 'FAILED', message: 'Idea not found'}, status: :bad_request
+					render json: {status: 'FAILED', message: 'Idea not found'}, status: :not_found
 				end
 			end
 
