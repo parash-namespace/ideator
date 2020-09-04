@@ -1,7 +1,7 @@
 class IdeasController < ApplicationController
 
 	before_action :assign_idea, only: [:edit, :update, :destroy]
-
+	# http_basic_authenticate_with name: "dhh", password: "secret", only: :index
 
 	def index
 		@ideas = Idea.paginate(page: params[:page], per_page: 2)

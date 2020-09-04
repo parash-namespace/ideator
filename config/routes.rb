@@ -4,4 +4,12 @@ Rails.application.routes.draw do
 
   get 'about' => 'static#about'
   get 'random' => 'static#random'
+
+  namespace 'api' do
+  	namespace 'current' do
+  		resources 'ideas'
+  	end
+  end
+
+
 end
